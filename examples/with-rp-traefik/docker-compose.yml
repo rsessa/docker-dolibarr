@@ -47,10 +47,10 @@ services:
     environment:
       DOLI_DB_HOST: "mysql"
       DOLI_DB_USER: "dolibarr"
-      DOLI_DB_PASSWORD: "Pa0la$22&2"
+      DOLI_DB_PASSWORD: "Paolas2282"
       DOLI_DB_NAME: "dolibarr"
       DOLI_ADMIN_LOGIN: "admin"
-      DOLI_ADMIN_PASSWORD: "Pa0la$22&2"
+      DOLI_ADMIN_PASSWORD: "Paolas2282"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.dolibarr.tls=true"
@@ -65,11 +65,11 @@ services:
       - backend-isolated
 
   mysql:
-    image: library/mariadb:latest
+    image: mariadb:latest
     environment:
       MYSQL_DATABASE: "dolibarr"
       MYSQL_USER: "dolibarr"
-      MYSQL_PASSWORD: "Pa0la$22&2"
+      MYSQL_PASSWORD: "Paolas2282"
     volumes:
       - ./docker-volumes/mysql-data:/var/lib/mysql
     networks:
