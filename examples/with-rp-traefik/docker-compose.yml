@@ -47,19 +47,19 @@ services:
     environment:
       DOLI_DB_HOST: "mysql"
       DOLI_DB_USER: "dolibarr"
-      DOLI_DB_PASSWORD: "mysupersecretpasswordfordatabase"
+      DOLI_DB_PASSWORD: "Pa0la$22&2"
       DOLI_DB_NAME: "dolibarr"
       DOLI_ADMIN_LOGIN: "admin"
-      DOLI_ADMIN_PASSWORD: "mysuperhypersecretpasswordforadminacount"
+      DOLI_ADMIN_PASSWORD: "Pa0la$22&2"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.dolibarr.tls=true"
-      - "traefik.http.routers.dolibarr.rule=Host(`mydolibarr.domain.tld`)"
+      - "traefik.http.routers.dolibarr.rule=Host(`erp.rsessa.com`)"
       - "traefik.http.services.dolibarr.loadbalancer.server.port=80"
       - "traefik.http.services.dolibarr.loadbalancer.server.scheme=http"
     volumes:
-      - dolibarr-docs:/var/www/documents
-      - dolibarr-custom:/var/www/html/custom
+      - ./docker-volumes/dolibarr-docs:/var/www/documents
+      - ./docker-volumes/dolibarr-custom:/var/www/html/custom
     networks:
       - backend-with-internet
       - backend-isolated
@@ -69,8 +69,8 @@ services:
     environment:
       MYSQL_DATABASE: "dolibarr"
       MYSQL_USER: "dolibarr"
-      MYSQL_PASSWORD: "mysupersecretpasswordfordatabase"
+      MYSQL_PASSWORD: "Pa0la$22&2"
     volumes:
-      - mysql-data:/var/lib/mysql
+      - ./docker-volumes/mysql-data:/var/lib/mysql
     networks:
       - backend-isolated
